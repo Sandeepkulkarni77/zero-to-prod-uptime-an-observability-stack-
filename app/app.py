@@ -1,31 +1,31 @@
-from datetime import datetime
+from flask import Flask, jsonify, request
 import socket
-from flask import Flask, jsonify, request 
+import datetime
 
+# Initialize Flask app
 app = Flask(__name__)
 
-@app.route('/')
+# Root route
+@app.route('/', methods=['GET'])
 def home():
-    return "Welcome to Sandeep's Flask app! Use /health to check status."
+    return "Welcome to Sandeep's app ......"
 
-@app.route('/health')
-def health_login():
-    current_time = datetime.now().isoformat()
-    host_name = socket.gethostname()
-
-    data = {
+# Health check route
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({
         "status": "ok",
-        "ts": current_time,
-        "host": host_name
-    }
+        "ts": datetime.datetime.utcnow().isoformat() + "Z",
+        "host": socket.gethostname()
+    })
 
-    return jsonify(data)
-
+# Echo route
 @app.route('/echo', methods=['POST'])
-def receive_data():
-    incoming_data = request.get_json()  
-    return jsonify(incoming_data)
+def echo():
+    data = request.get_json() or {}
+    return jsonify({"echo": data})
 
+# Run the app
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
+    # Bind to all interfaces so it’s reachable via 127 and 192 IPs
+    app.run(host="0.0.0.0", port=5000, debug=True)
