@@ -1,4 +1,4 @@
-ivboxuser@sandeep-vm1:~/zero-to-prod-uptime-an-observability-stack-/db$ sudo -u postgres psql 
+sivboxuser@sandeep-vm1:~/zero-to-prod-uptime-an-observability-stack-/db$ sudo -u postgres psql 
 
 postgres=# CREATE DATABASE uptCREATE DATABASE uptime;
 
