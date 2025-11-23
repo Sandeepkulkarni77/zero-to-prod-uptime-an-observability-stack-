@@ -19,4 +19,6 @@ GRANT INSERT ON hc_metrics_2025_11 TO app_user;
 CREATE TABLE hc_metrics_2025_12 PARTITION OF hc_metrics
 FOR VALUES FROM ('2025-12-01 00:00:00') TO ('2026-01-01 00:00:00');
 
+CREATE INDEX idx_hc_metrics_ts_route
+ON hc_metrics (ts, route);
 
