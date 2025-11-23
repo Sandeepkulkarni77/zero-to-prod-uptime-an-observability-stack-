@@ -1,6 +1,6 @@
-sivboxuser@sandeep-vm1:~/zero-to-prod-uptime-an-observability-stack-/db$ sudo -u postgres psql 
 
-postgres=# CREATE DATABASE uptCREATE DATABASE uptime;
+
+CREATE DATABASE uptime;
 
 CREATE USER app_user WITH PASSWORD 'user@123';
 
@@ -20,4 +20,5 @@ GRANT INSERT ON hc_metrics_2025_11 TO app_user;
 
 CREATE TABLE hc_metrics_2025_12 PARTITION OF hc_metrics
 FOR VALUES FROM ('2025-12-01 00:00:00') TO ('2026-01-01 00:00:00');
+
 
