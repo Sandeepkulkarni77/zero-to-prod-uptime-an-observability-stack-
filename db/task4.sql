@@ -1,8 +1,4 @@
 ivboxuser@sandeep-vm1:~/zero-to-prod-uptime-an-observability-stack-/db$ sudo -u postgres psql 
-[sudo] password for vboxuser: 
-could not change directory to "/home/vboxuser/zero-to-prod-uptime-an-observability-stack-/db": Permission denied
-psql (14.19 (Ubuntu 14.19-0ubuntu0.22.04.1))
-Type "help" for help.
 
 postgres=# CREATE DATABASE uptime; 
 CREATE DATABASE
