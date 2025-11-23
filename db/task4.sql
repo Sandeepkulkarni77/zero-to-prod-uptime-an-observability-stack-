@@ -1,5 +1,3 @@
-
-
 CREATE DATABASE uptime;
 
 CREATE USER app_user WITH PASSWORD 'user@123';
