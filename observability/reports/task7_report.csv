@@ -1,0 +1,7 @@
+Metric,Value
+Total Requests,4
+Availability %,100.0
+p95 Latency (s),0.0
+4xx Errors,0
+5xx Errors,0
+Top IPs,"[('127.0.0.1', 4)]"
