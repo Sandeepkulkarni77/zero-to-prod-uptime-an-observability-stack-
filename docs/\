@@ -1,0 +1,13 @@
+## Drill 1: Replica Connection Failed (pg_hba.conf)
+
+Symptom:
+psql shows "no pg_hba.conf entry for host"
+
+Root Cause:
+Replica rejected client IP due to missing pg_hba rule
+
+Fix:
+Added host entry and restarted postgres
+
+Verification:
+psql remote connection successful
