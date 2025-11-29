@@ -1,13 +1,60 @@
 # Zero-to-Prod Uptime & Observability Stack
 
-This repository contains the end-to-end setup for the **Zero-to-Prod Uptime & Observability Stack** project.
+This project is a small production-like setup that I built to practice real DevOps concepts instead of just running sample apps.
 
-## 📂 Folder Overview
-- app/        → Flask web service (health & echo endpoints)
-- nginx/      → Reverse proxy + TLS config
-- db/         → PostgreSQL schema & replication scripts
-- scripts/    → Helper scripts (healthcheck, alerts, log parser)
-- systemd/    → Unit files & timers
-- docs/       → Runbook, troubleshooting, demo scripts
-- tests/      → Verification scripts and checks
+The goal was to understand how services behave in production: how traffic comes in, how failures happen, how monitoring works, and how recovery is handled.
 
+# How this setup works
+
+Traffic enters through Nginx running with HTTPS.  
+Requests are forwarded to a Flask application running as a systemd service.  
+Health data is stored in PostgreSQL, and a replica is configured for failover and reporting.
+
+[ Client ]
+    |
+    v
+[ Nginx + TLS ]  (Host A)
+    |
+    v
+[ Flask App ]    (Host B)
+    |
+    v
+[ PostgreSQL Primary ] ───> [ PostgreSQL Replica ] (Host C)
+
+# Folder structure
+- app/ → Flask application  
+- nginx/ → Nginx reverse proxy and TLS config  
+- db/ → SQL schema and database setup  
+- observability/ → log intelligence and reports  
+- scripts/ → health check and helper scripts  
+- alerts/ → alerting logic  
+- backups/ → DB backup scripts and jobs  
+- systemd/ → service files and timers  
+- docs/ → runbook, troubleshooting, demo script  
+- tests/ → testing and validation file
+
+# What I implemented
+- HTTPS with Nginx
+- Flask app as systemd service
+- PostgreSQL primary and replica
+- Health monitoring script
+- Log analysis using regex
+- Alerts on latency and downtime
+- Automated backups
+- Manual failure testing and recovery
+
+# Targets used
+Availability: 99.5%  
+Latency: under 300ms  
+Alert window: 15 minutes  
+Backups: daily
+
+# Demo
+Demo steps are in:docs/demo-script.md
+
+# Note
+This project helped me understand:
+- how services fail
+- how alerts work
+- how logs help debugging
+- how recovery actually happens
