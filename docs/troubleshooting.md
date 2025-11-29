@@ -40,3 +40,17 @@ Removed qdisc rule
 Verification:
 Latency returned to normal
 
+
+## Hardening: Security Headers (HSTS)
+
+Added headers:
+- Strict-Transport-Security (HSTS) — forces HTTPS
+- X-Content-Type-Options
+- X-Frame-Options
+- Referrer-Policy
+
+Verification:
+curl -kI https://localhost
+
+Result:
+Headers present in response
