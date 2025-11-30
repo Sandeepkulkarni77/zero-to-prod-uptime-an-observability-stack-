@@ -10,4 +10,4 @@ try:
     print("Response status:", response.status_code)
     print("Response text:", response.text)
 except Exception as e:
-    print("⚠️ Error:", e) 
+    print("Error:", e) 
