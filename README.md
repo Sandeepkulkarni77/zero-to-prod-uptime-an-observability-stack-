@@ -49,7 +49,7 @@ Latency: under 300ms
 Alert window: 15 minutes  
 Backups: daily
 
-# structure 
+# Workflow Diagram 
 
 <img width="1536" height="1024" alt="6438714b-ee11-4684-b02b-d4df54401aec" src="https://github.com/user-attachments/assets/282276b6-28fd-454b-80cd-1de6817453f0" />
 
