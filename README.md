@@ -49,12 +49,11 @@ Latency: under 300ms
 Alert window: 15 minutes  
 Backups: daily
 
-# Demo
-1- https op: <img width="963" height="218" alt="https" src="https://github.com/user-attachments/assets/e4d3ec98-093a-460b-9fb2-ffefc2ac7bba" />
+# structure 
 
-2- nginx.service: <img width="1229" height="495" alt="nginx" src="https://github.com/user-attachments/assets/16030f0e-9378-49ca-96f2-3f6718b2f612" />
+<img width="1536" height="1024" alt="6438714b-ee11-4684-b02b-d4df54401aec" src="https://github.com/user-attachments/assets/282276b6-28fd-454b-80cd-1de6817453f0" />
 
-3- postgres.service: <img width="1313" height="251" alt="postgres" src="https://github.com/user-attachments/assets/a1b58ae8-2812-4142-9349-2540cc46d79e" />
+
 
 # Note
 This project helped me understand:
