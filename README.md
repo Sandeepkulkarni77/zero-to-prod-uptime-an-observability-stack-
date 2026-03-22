@@ -313,3 +313,9 @@ sudo tc qdisc del dev eth0 root
 | Security | TLS, HSTS, minimal ciphers, least-privilege DB user |
 | DB admin | partitioning, streaming replication, VACUUM, backup/restore |
 | Troubleshooting | DB down, TLS mismatch, induced latency drills |
+
+## Conclusion
+
+This project goes beyond running a simple application — it focuses on how real systems behave in production.
+It demonstrates how traffic is handled through a reverse proxy, how services are monitored continuously, and how failures are detected and acted upon using alerts. By implementing replication, automated health checks, log analysis, and recovery workflows, this setup reflects practical DevOps principles such as reliability, observability, and fault tolerance.
+Building this helped me understand not just how to deploy services, but how to operate, monitor, and troubleshoot them in a production-like environment.
